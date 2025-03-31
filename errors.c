@@ -32,6 +32,25 @@ int free_exit(t_fractal *fract)
     exit(0);
     return (0);
 }
+/*
+int free_exit(t_fractal *fract)
+{
+    if (!fract)
+        return (0); 
+    if (fract->image.image_ptr)
+        mlx_destroy_image(fract->window.mlx_conn, fract->image.image_ptr);
+    if (fract->window.mlx_win)
+        mlx_destroy_window(fract->window.mlx_conn, fract->window.mlx_win);
+    if (fract->window.mlx_conn)
+    {
+        mlx_destroy_display(fract->window.mlx_conn);
+        free(fract->window.mlx_conn);
+    }
+    write(1, "Program exited successfully.\n", 29);
+    exit(0);
+    return (0);
+}
+*/
 
 /*
 void close_display(t_fractal *data)
