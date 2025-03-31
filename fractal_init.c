@@ -66,3 +66,41 @@ void	initialization(t_fractal *fract)
 	fract->axis.y = 0.0;
 	fract->zoom = 1.0;
 }
+/*
+void	initialization(t_fractal *fract)
+{
+	if (!fract)
+	{
+        putstr_fd("Error: fract structure is NULL\n", 2);
+        exit(1);
+    }
+	fract->window.mlx_conn = mlx_init();
+	if (!fract->window.mlx_conn)
+    {
+        putstr_fd("Error: Failed to initialize MiniLibX\n", 2);
+        free_exit(fract);
+    }
+	fract->window.mlx_win = mlx_new_window(fract->window.mlx_conn, WIDTH, HEIGHT, fract->name);
+	if (!fract->window.mlx_win)
+    {
+        putstr_fd("Error: Failed to create window\n", 2);
+        free_exit(fract);
+    }
+	fract->image.image_ptr = mlx_new_image(fract->window.mlx_conn, WIDTH, HEIGHT);
+	if (!fract->image.image_ptr)
+    {
+        putstr_fd("Error: Failed to create image\n", 2);
+        free_exit(fract);
+    }
+	fract->image.pixels = mlx_get_data_addr(fract->image.image_ptr,
+			&fract->image.bpp, &fract->image.line_len, &fract->image.endian);
+	mlx_hook(fract->window.mlx_win, KeyPress, KeyPressMask, handle_keys, fract);
+	mlx_hook(fract->window.mlx_win, ButtonPress, ButtonPressMask, handle_mouse, fract);
+	mlx_hook(fract->window.mlx_win, DestroyNotify, StructureNotifyMask, free_exit, fract);
+	fract->iterations = 252;
+	fract->esc_val = 4;
+	fract->axis.x = 0.0;
+	fract->axis.y = 0.0;
+	fract->zoom = 1.0;
+}
+*/
